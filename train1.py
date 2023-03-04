@@ -13,7 +13,7 @@ from sklearn.svm import SVC
 # os.environ['PROCESSED_DATA_DIR'] = "/home/k8user/heart-disease-jenkins/Heart-Disease-Prediction-main"
 # Set path to inputs
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
-train_data_file = 'train.csv'
+train_data_file = 'train'
 train_data_path = os.path.join(PROCESSED_DATA_DIR, train_data_file)
 df = pd.read_csv(train_data_path, sep=",")
 # Split data into dependent and independent variables
