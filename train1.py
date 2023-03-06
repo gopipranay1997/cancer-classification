@@ -32,3 +32,22 @@ val_logit = cross_val_score(logit_model, X_train, y_train, cv=cv).mean()
 train_metadata = {
     'validation_acc': val_logit
 }
+
+
+# Set path to output (model)
+MODEL_DIR = os.environ["MODEL_DIR"]
+model_name = 'logit_model.joblib'
+model_path = os.path.join(MODEL_DIR, model_name)
+
+# Serialize and save model
+dump(logit_model, model_path)
+
+
+# Set path to output (metadata)
+RESULTS_DIR = os.environ["RESULTS_DIR"]
+train_results_file = 'train_metadata.json'
+results_path = os.path.join(RESULTS_DIR, train_results_file)
+
+# Serialize and save metadata
+with open(results_path, 'w') as outfile:
+    json.dump(train_metadata, outfile)
