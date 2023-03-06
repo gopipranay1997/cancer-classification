@@ -28,7 +28,7 @@ df = pd.read_csv(test_data_path, sep=",")
 
 # Split data into dependent and independent variables
 # Drop useless variables
-X_test = df.drop(['target'], axis='columns')
+X_test = df.drop(['target'], axis=1)
 y_test = df['target']
 
 # Predict
