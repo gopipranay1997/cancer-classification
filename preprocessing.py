@@ -15,3 +15,13 @@ X = data.drop(['Unnamed: 32', 'id', 'diagnosis'], axis=1)
 y = pd.DataFrame(np.where(data['diagnosis']=='M',1,0), columns=['diagnosis'])
 data1 = pd.concat([X,y], axis=1)
 train, test = train_test_split(data1, test_size=0.2, stratify=data1['diagnosis'])
+
+
+# Set path to the outputs
+PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
+train_path = os.path.join(PROCESSED_DATA_DIR, 'train.csv')
+test_path = os.path.join(PROCESSED_DATA_DIR, 'test.csv')
+
+# Save csv
+train.to_csv(train_path, index=False)
+test.to_csv(test_path,  index=False)
