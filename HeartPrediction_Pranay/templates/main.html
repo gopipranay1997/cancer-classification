@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask and Deployed in localhost.</p><br>
+        <p>(Note:This model is 90% accurate)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Your age.."><br>
+
+        <label for="trestbps">Resting Blood Pressure</label>
+        <input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94-200] mmHg"><br>
+
+        <label for="chol">Serum Cholesterol</label>
+        <input type="text" id="chol" name="chol" placeholder="A number in range [126-564] mg/dl"><br>
+
+        <label for="fbs">Fasting Blood Sugar</label>
+        <select id="fbs" name="fbs">
+          <option selected>----select option----</option>
+          <option value="1">Greater than 120 mg/dl</option>
+          <option value="0">Less than 120 mg/dl</option>
+        </select><br>	
+        
+  
+        <label for="thalach">Max Heart Rate </label>
+        <input type="text" id="thalach" name="thalach" placeholder="A number in range [71-202] bpm"><br>
+
+        <label for="oldpeak">ST depression</label>
+        <input type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0-6.2]"><br>
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+          <option selected>----select option----</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select><br>
+
+
+        <label for="cp1">ChestPainType_ATA</label>
+        <select id="cp1" name="cp1">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="cp2">ChestPainType_NAP</label>
+        <select id="cp2" name="cp2">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+       <label for="cp3">ChestPainType_TA</label>
+        <select id="cp3" name="cp3">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="cp4">RestingECG_Normal</label>
+        <select id="cp4" name="cp4">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+        
+        <label for="cp5">RestingECG_ST</label>
+        <select id="cp5" name="cp5">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="cp6">ExerciseAngina_Y</label> 
+        <select id="cp6" name="cp6">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="cp7">ST_Slope_Flat</label> 
+        <select id="cp7" name="cp7">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+ 
+        <label for="cp8">ST_Slope_Up</label> 
+        <select id="cp8" name="cp8">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br> 
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+</body>
+
+</html>
