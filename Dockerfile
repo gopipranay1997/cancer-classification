@@ -8,12 +8,12 @@ ENV http_proxy http://172.30.10.43:3128
 ENV https_proxy http://172.30.10.43:3128
 
 RUN apt-get update && \
-    apt-get install -y python && \
-    apt-get install -y python3-pip python3-dev && \
     pip3 install flask && \
     apt-get install -y jq && \
     pip install joblib
     
+#     apt-get install -y python && \
+#     apt-get install -y python3-pip python3-dev && \    
     
 COPY HeartPrediction_Pranay .
 
