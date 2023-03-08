@@ -7,9 +7,8 @@ RUN apt-get update && \
     apt-get install -y jq && \
     pip3 install flask && \
     pip install joblib && \
-    dpkg --configure -a && \
-    chmod 700 /var/lib/apt/lists/partial
-
+    dpkg --configure -a 
+    
 COPY HeartPrediction_Pranay .
 
 RUN mkdir model raw_data processed_data results
