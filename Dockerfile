@@ -34,6 +34,6 @@ COPY preprocessing.py ./preprocessing.py
 COPY train1.py ./train1.py
 COPY test1.py ./test1.py
 
-EXPOSE 5500
+EXPOSE 5501
 
 CMD ["python","app.py"]
