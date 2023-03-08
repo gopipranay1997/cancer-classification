@@ -7,17 +7,14 @@ FROM jupyter/scipy-notebook
 ENV http_proxy http://172.30.10.43:3128
 ENV https_proxy http://172.30.10.43:3128
 
-USER root
+# USER root
 
-RUN dpkg --configure -a
-
-RUN apt-get update && \
-    pip3 install flask && \
-    apt-get install -y jq && \
-    pip install joblib
+RUN sudo apt-get update && pip3 install flask && apt-get install -y jq && pip install joblib
     
 #     apt-get install -y python && \
 #     apt-get install -y python3-pip python3-dev && \    
+
+RUN dpkg --configure -a
     
 COPY HeartPrediction_Pranay .
 
