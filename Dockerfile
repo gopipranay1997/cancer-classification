@@ -21,14 +21,9 @@ ENV MODEL_DIR=/home/jovyan/model
 ENV RESULTS_DIR=/home/jovyan/results
 ENV RAW_DATA_FILE=data.csv
 
-COPY HeartPrediction_Pranay .
 
 COPY data.csv ./raw_data/data.csv
 COPY preprocessing.py ./preprocessing.py
 COPY train1.py ./train1.py
 COPY test1.py ./test1.py
 
-
-EXPOSE 5500
-
-CMD ["python","app.py"]
